@@ -1,0 +1,173 @@
+@keyframes fly-in {
+    from {transform: translateY(-700%);}
+    to {transform: none;}
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 700px;
+    height: 100%;
+    text-align: center;
+    background-image: url("/images/channel.svg");
+    background-size: cover;
+    background-position: center;
+    font: 1rem Arial;
+    color: white;
+}
+
+.channel {
+    position: relative;
+    height: 100%;
+    background-color: #231;
+}
+
+.game-board-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
+}
+
+/*only element inline in .game-board container. height is 0
+since it practically doesn't have any inline content. When
+padding-bottom is given a percentage that is a ratio of the
+container's *width* therefore we can set up bottom padding
+in a way it yields a rectangular region whose aspect ratio
+is fixed and height is calculated relative to the width.*/
+.game-board-aspect {
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    padding-bottom: calc(600% / 7);
+}
+
+.game-board {
+    position: absolute;
+    display: grid;
+    margin: 0 auto;
+    left: 5%;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    grid-template-columns: repeat(7, 14fr);
+    grid-template-rows: 100fr;
+    grid-column-gap: 0;
+}
+
+.game-board:after {
+    
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 2.5%;
+    left: 0%;
+    top: 98.75%;
+    background-image: url("/images/lane-separator-horizontal.svg");
+    background-size: 100% 100%;
+}
+
+.board-row {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: 12%;
+}
+
+.board-row:after, .board-row:first-child:before  {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 15%;
+    height: 100%;
+    left: 92.5%;
+    top: 0;
+    background-image: url("/images/lane-separator-vertical.svg");
+    background-size: 100% 100%;
+}
+
+.board-row:first-child:before {
+    left: -7.5%;
+}
+
+
+.piece {
+    display: block;
+    margin: 0;
+    margin-top: 6%;
+    width: 95%;
+    height: auto;
+    animation-name: fly-in;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+}
+
+.piece.winner {
+    transition: transform 0.5s;
+}
+
+.info {
+    position: absolute;
+    display: grid;
+    grid-template-rows: 100fr;
+    grid-template-columns: repeat(3, 33.3333333333fr);
+	width: 90%;
+    left: 5%;
+    font-size: 1.5em;
+}
+
+.info > * {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.info > :first-child {
+    text-align: left;
+}
+
+.info > :last-child {
+    text-align: right;
+}
+
+.info.top {
+    top: 0.25em;
+}
+
+.info.bottom {
+    bottom: 0.25em;
+}
+
+.info .button-link {
+	padding: 0.2em;
+	background-color: #f00;
+	box-shadow: 0 0.2em #a00;
+	color: white;
+    text-decoration: none;
+}
+
+.info .button-link:hover {
+    background-color: #f88;
+}
+
+.info img {
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+	transform: rotate(30deg);
+}
+
+.info small {
+    font-size: 0.7em;
+}

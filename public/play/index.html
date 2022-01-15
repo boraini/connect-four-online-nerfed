@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Laga Coordination - Game</title>
+		<link rel='stylesheet' href='/stylesheets/game.css' />
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="channel">
+			<div class="game-board-container">
+				<div class="game-board-aspect"></div>
+				<div id="game-board" class="game-board">
+					<div id="board-row-1" class="board-row"></div>
+					<div id="board-row-2" class="board-row"></div>
+					<div id="board-row-3" class="board-row"></div>
+					<div id="board-row-4" class="board-row"></div>
+					<div id="board-row-5" class="board-row"></div>
+					<div id="board-row-6" class="board-row"></div>
+					<div id="board-row-7" class="board-row"></div>
+				</div>
+			</div>
+			<div class="info top">
+				<p>Your Colour: <img id="player-indicator" alt="plyr" width="32" height="32" /></p>
+				<p id="infoBox">Info Box</p>
+				<p><a class="button-link" href="/">Leave</a></p>
+			</div>
+			<div class="info bottom">
+				<p></p>
+				<p id="time">Time: </p>
+				<p><small id="statusDisplay"></small></p>
+			</div>
+		</div>
+		<script src="/javascripts/messages.js"></script>
+		<script src="/javascripts/game.js"></script>
+	</body>
+</html>

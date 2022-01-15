@@ -1,0 +1,116 @@
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/splashbg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    font: 1rem Arial;
+    color: white;
+}
+
+.section {
+  margin: 1rem;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 0.2em auto;
+}
+
+a {
+  color: white;
+}
+
+.full-width-button {
+	display: block;
+  padding: 0.3em;
+	font-size: 2em;
+	background-color: #00a6d6;
+  box-shadow: #005c75 0 0.2em;
+  text-decoration: none;
+  color: white;
+}
+
+.full-width-button:hover {
+  background-color: #98d9eb;
+}
+
+.stats {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	font-size: 3em;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.stats p {
+  margin: 0.2em 0;
+	padding: 0;
+	width: 5em;
+	color: black;
+}
+
+.stats small {
+	font-size: 0.4em;
+}
+
+.how-to {
+  padding: 1em;
+  font-size: 1em;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.how-to h1 {
+  font-size: 2em;
+}
+
+.how-to img {
+  float: left;
+  clear: right;
+  margin-right: 0.5em;
+}
+
+.how-to p {
+  text-align: left;
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+/*clearfix. we add an empty paragraph which wants to move
+below the floating image thus extends .how-to beyond the
+image. Without this .how-to extends down only as far as the
+text goes.*/
+.how-to p:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+}
+
+.screen-size-warning {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
+  max-width: 700px;
+}
+
+@media screen and (max-height: 600px) {
+  .screen-size-warning {
+    display: block;
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<h1>Laga Coordination</h1>
+		<h2>Delft-Themed Connect Four</h2>
+		<section class="section stats">
+			<p><%= numberStarted %><small><% if (numberStarted == 1) { %>game<% } else { %>games<% } %> being played</small></p>
+			<p><%= numberCompleted %><small><% if (numberCompleted == 1) { %>game<% } else { %>games<% } %> completed</small></p>
+			<p><%= redWinners %><small>red <% if (redWinners == 1) { %>winner<% } else { %>winners<% } %></small></p>
+			<p><%= blueWinners %><small>blue <% if (blueWinners == 1) { %>winner<% } else { %>winners<% } %></small></p>
+			<p><%= ties %><small> <% if (redWinners == 1) { %>tie<% } else { %>ties<% } %></small></p>
+		</section>
+		<section class="section">
+			<a class="full-width-button" href="/play">Play</a>
+		</section>
+		<section class="section how-to">
+			<h1>How to Play</h1>
+			<img src="/images/tutorial.png" alt="tutorial" width="249" height="231"/>
+			<p>When it is your turn, click a lane to “drop” a canoe into it. Try to arrange four canoes horizontally, vertically, or diagonally as seen on the left before your opponent, or before the lanes fill up!</p>
+		</section>
+		<section class="section">
+			<p>The background, <a href="https://commons.wikimedia.org/wiki/File:Delft_Abtwoudsebrug.jpg" target="_blank" rel="noopener noreferrer">a photo of the Abtwoudsebrug in Delft,</a> is a courtesy of M. Minderhoud on the Wikimedia&nbsp;Commons. Licensed CC-BY-SA 3.0.</p>
+		</section>
+		<div class="screen-size-warning">
+			<h2>Warning</h2>
+			<p>Please use a taller screen or a taller window!</p>
+		</div>
+	</body>
+</html>
