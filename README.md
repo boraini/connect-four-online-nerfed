@@ -1,5 +1,6 @@
 # Laga Coordination - Delft-Themed Connect Four
 Authors: CSE 2 76, Berke Aygulhan and Mert Bora Inevi
+
 Made as a quarterly university homework project. Hope you enjoy!
 ## Running
 Install npm and Node.js then
