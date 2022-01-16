@@ -1,8 +1,4 @@
 const messages = {
-    /*connectionModes: {
-        unassigned: -1,
-        playsGame: 1
-    },*/
     statusMessages: {
         invalidMessage: "Your client has sent an invalid live connection message.",
         connectionLost: "Connection to the server was lost! Please go to the main page and join another game.",
