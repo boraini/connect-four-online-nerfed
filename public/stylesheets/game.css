@@ -38,12 +38,13 @@ body {
     padding: 0;
 }
 
-/*only element inline in .game-board container. height is 0
-since it practically doesn't have any inline content. When
-padding-bottom is given a percentage that is a ratio of the
-container's *width* therefore we can set up bottom padding
-in a way it yields a rectangular region whose aspect ratio
-is fixed and height is calculated relative to the width.*/
+/*the only element inline in .game-board container. height
+is 0 since it practically doesn't have any inline content.
+When padding-bottom is given a percentage that is a ratio
+of the container's *width* therefore we can set up bottom
+padding in a way that it yields a rectangular region whose
+aspect ratio is fixed and height is calculated relative to
+the width.*/
 .game-board-aspect {
     margin: 0;
     padding: 0;
@@ -65,7 +66,6 @@ is fixed and height is calculated relative to the width.*/
 }
 
 .game-board:after {
-    
     position: absolute;
     display: block;
     content: "";
@@ -102,7 +102,6 @@ is fixed and height is calculated relative to the width.*/
     left: -7.5%;
 }
 
-
 .piece {
     display: block;
     margin: 0;
@@ -123,6 +122,7 @@ is fixed and height is calculated relative to the width.*/
     display: grid;
     grid-template-rows: 100fr;
     grid-template-columns: repeat(3, 33.3333333333fr);
+    align-items: center;
 	width: 90%;
     left: 5%;
     font-size: 1.5em;
@@ -150,6 +150,7 @@ is fixed and height is calculated relative to the width.*/
 }
 
 .info .button-link {
+    display: inline-block;
 	padding: 0.2em;
 	background-color: #f00;
 	box-shadow: 0 0.2em #a00;
@@ -159,6 +160,11 @@ is fixed and height is calculated relative to the width.*/
 
 .info .button-link:hover {
     background-color: #f88;
+}
+
+.info .button-link:active {
+    transform: translateY(0.2em);
+    box-shadow: none;
 }
 
 .info img {

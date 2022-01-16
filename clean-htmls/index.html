@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title><%= title %></title>
-		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
 		<meta charset="UTF-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +11,18 @@
 		<h1 class="main">Laga Coordination</h1>
 		<h2>Delft-Themed Connect Four</h2>
 		<section class="section stats fly-in delay1">
-			<p><%= numberStarted %><small> <% if (numberStarted == 1) { %>game<% } else { %>games<% } %> being played</small></p>
-			<p><%= numberCompleted %><small> <% if (numberCompleted == 1) { %>game<% } else { %>games<% } %> completed</small></p>
-			<p><%= redWinners %><small> red <% if (redWinners == 1) { %>winner<% } else { %>winners<% } %></small></p>
-			<p><%= blueWinners %><small> blue <% if (blueWinners == 1) { %>winner<% } else { %>winners<% } %></small></p>
-			<p><%= ties %><small> <% if (ties == 1) { %>tie<% } else { %>ties<% } %></small></p>
+			<p>1<small> games being played</small></p>
+			<p>12<small> games completed</small></p>
+			<p>3<small> red winners</small></p>
+			<p>4<small> blue winners</small></p>
+			<p>5<small> ties</small></p>
 		</section>
 		<section class="section fly-in delay2">
 			<a class="full-width-button" href="/play">Play</a>
 		</section>
 		<section class="section how-to fly-in delay3">
 			<h1>How to Play</h1>
-			<img src="/images/tutorial.png" alt="tutorial" width="249" height="231"/>
+			<img src="../public/images/tutorial.png" alt="tutorial" width="249" height="231"/>
 			<p>When it is your turn, click a lane to “drop” a canoe into it. Try to arrange four canoes horizontally, vertically, or diagonally as seen on the left before your opponent, or before the lanes fill up!</p>
 		</section>
 		<section class="section">

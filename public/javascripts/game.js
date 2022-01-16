@@ -34,10 +34,10 @@ class GameBoard {
    * @param {Number} index 
    */
   makeMove(index) {
-    if (this.data.turn != localPlayer) alert("Please wait for the other player.");
-    else if (this.data.board[index].length >= BOARD_ROWS) alert("You can't play in that column.");
+    if (this.data.turn != 0 && this.data.turn != localPlayer) alert(messages.statusMessages.notYourTurn);
+    else if (this.data.board[index].length >= BOARD_ROWS) alert(messages.statusMessages.wrongColumn);
     else {
-      socket.send(`{"connectionMode": ${window.messages.connectionModes.playsGame}, "makeMove": ${index}}`);
+      socket.send(`{"makeMove": ${index}}`);
       this.data.turn = 0;
     }
   }
@@ -85,7 +85,7 @@ class GameBoard {
   }
 
   /**renders the data
-   * @param {*} data 
+   * @param {import("../../game").gameBoard} data 
    */
   render(data) {
     const { boardUpdates } = this.diff(data);

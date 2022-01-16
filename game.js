@@ -15,6 +15,7 @@ const games = {};
 
 /**game board data
  * @typedef {Object} gameBoard
+ * @property {Boolean} loginComplete true if both players have logged in else false
  * @property {Number[][]} board one array for each column of the game board, starting from the bottom
  * @property {Number} turn which player should play, 1 or 2
  * @property {Number} elapsedTime elapsed time in milliseconds since the start of the game
@@ -117,9 +118,11 @@ Game.prototype.makeMove = function (player, index) {
     if (winning) {
       this.gameBoard.winner = winning.player;
       this.gameBoard.winningPosition = winning;
+      this.gameBoard.turn = 0;
     }
     else if (this.checkTie()) {
       this.gameBoard.tie = true;
+      this.gameBoard.turn = 0;
     }
     return this.gameStateInfo(player);
   }

@@ -64,8 +64,6 @@ let connectionID = 0;
 
 const wss = new websocket.Server({ server });
 
-const cm = msg.connectionModes;
-
 wss.on("connection", function (conn) {
   //generate new ID for connection
   const newCID = connectionID++;
@@ -79,8 +77,6 @@ wss.on("connection", function (conn) {
   conn.gameID = joinInfo.gameID;
   conn.player = joinInfo.player;
   games[joinInfo.gameID]["player" + joinInfo.player] = conn.id;
-
-  conn.mode = cm.playsGame;
 
   //send the current game state to the player
   sendGameStateInfo(games[conn.gameID]);
