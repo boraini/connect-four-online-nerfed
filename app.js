@@ -16,7 +16,10 @@ const logger = require('morgan');
 const websocket = require("ws");
 const exputils = require("./express-generator-utils");
 
+const port = exputils.normalizePort(process.argv.length > 2 ? process.argv[2] : 3000);
+
 const indexRouter = require('./routes/index');
+const playRouter = require('./routes/play');
 
 const msg = require("./public/javascripts/messages.js");
 const { games, Game } = require("./game.js");
@@ -25,14 +28,16 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
+//indexRouter(...) returns the callback needed here
+app.use('/', indexRouter(stats));
+app.use('/play', playRouter(port));
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-//indexRouter(...) returns the callback needed here
-app.use('/', indexRouter(stats));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -51,7 +56,6 @@ app.use(function (err, req, res, next) {
   console.log(err);
 });
 
-var port = exputils.normalizePort(process.argv.length > 2 ? process.argv[2] : 3000);
 app.set('port', port);
 
 const server = app.listen(port);
