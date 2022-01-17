@@ -15,6 +15,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const websocket = require("ws");
 const exputils = require("./express-generator-utils");
+const httpsRedirect = require("./redirect");
 
 const port = exputils.normalizePort(process.argv.length > 2 ? process.argv[2] : 3000);
 
@@ -27,6 +28,8 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//https redirect (except localhost)
+app.use(httpsRedirect(false, port));
 
 //indexRouter(...) returns the callback needed here
 app.use('/', indexRouter(stats));
