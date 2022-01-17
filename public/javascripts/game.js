@@ -1,4 +1,4 @@
-const WEBSOCKET_URL = "ws://localhost:3000";
+const WEBSOCKET_URL = "ws://" + location.hostname + (location.port.length > 2 ? ":" + location.port : "");
 const BOARD_COLUMNS = 7;
 const BOARD_ROWS = 6;
 const PIECE_IMG_SRC = [undefined, "/images/laga-blue-male.svg", "/images/laga-red-male.svg"];
